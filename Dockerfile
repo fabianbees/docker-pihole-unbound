@@ -1,7 +1,7 @@
 # set version label
-ARG VERSION
+ARG BASE_VERSION
 
-FROM pihole/pihole:"${VERSION}"
+FROM pihole/pihole:"${BASE_VERSION}"
 RUN apt update && apt install -y unbound
 
 COPY lighttpd-external.conf /etc/lighttpd/external.conf 
