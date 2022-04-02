@@ -10,6 +10,23 @@ The base image for the container is the [official Pi-Hole container](https://hub
 
 First create a `.env` file to substitute variables for your deployment. 
 
+## Docker run
+
+```bash
+docker run -d \
+  --name='pihole' \
+  -e TZ="Europe/Berlin" \
+  -e 'TCP_PORT_53'='53' -e 'UDP_PORT_53'='53' -e 'UDP_PORT_67'='67' -e 'TCP_PORT_80'='80' -e 'TCP_PORT_443'='443' \
+  -e 'TZ'='Europe/Berlin' \
+  -e 'WEBPASSWORD'='******' \
+  -v "$PWD/pihole/pihole/":'/etc/pihole/':'rw' \
+  -v "$PWD/pihole/dnsmasq.d/":'/etc/dnsmasq.d/':'rw' \
+  -v "$PWD/pihole/external.conf":'/etc/lighttpd/external.conf':'rw' \
+  --cap-add=NET_ADMIN \
+  --hostname=pihole \
+  'fabianbees/pihole-unbound:latest'
+```
+
 
 ### Required environment variables
 
