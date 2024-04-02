@@ -3,7 +3,7 @@
 UNBOUND_CONF="/etc/unbound/unbound.conf.d/pi-hole.conf"
 
 # set num-threads for unbound matching the running machine
-sed -i "s/num-threads: 1/num-threads: $(nproc --all)/" $UNBOUND_CONF
+sed -i "s/num-threads: 1/num-threads: $(nproc)/" $UNBOUND_CONF
 if [ "$USE_IPV6" == "true" ]; then
     sed -i "s/do-ip6: no/do-ip6: yes/" $UNBOUND_CONF
 fi
