@@ -2,7 +2,8 @@
 ARG BASE_VERSION
 
 FROM pihole/pihole:"${BASE_VERSION}"
-RUN apt update && apt install -y unbound
+RUN apt update && apt install -y unbound && \
+  rm -rf /var/cache/apt /var/lib/apt/lists
 
 COPY lighttpd-external.conf /etc/lighttpd/external.conf 
 COPY unbound-pihole.conf /etc/unbound/unbound.conf.d/pi-hole.conf

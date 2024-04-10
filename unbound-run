@@ -1,7 +1,7 @@
 #!/command/with-contenv bash
 
 # set num-threads for unbound matching the running machine
-sed -i "s/num-threads: 1/num-threads: $(nproc --all)/" /etc/unbound/unbound.conf.d/pi-hole.conf
+sed -i "s/num-threads: 1/num-threads: $(nproc)/" /etc/unbound/unbound.conf.d/pi-hole.conf
 if [ "$USE_IPV6" == "true" ]; then
     sed -i "s/do-ip6: no/do-ip6: yes/" /etc/unbound/unbound.conf.d/pi-hole.conf
 fi
