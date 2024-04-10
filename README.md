@@ -23,7 +23,7 @@ docker run -d \
   -v "$PWD/pihole/dnsmasq.d/":'/etc/dnsmasq.d/':'rw' \
   --cap-add=NET_ADMIN \
   --hostname=pihole \
-  'fabianbees/pihole-unbound:development-v6'
+  'fabianbees/pihole-unbound:dev'
 ```
 
 
