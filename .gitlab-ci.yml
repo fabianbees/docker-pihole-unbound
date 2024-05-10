@@ -7,8 +7,8 @@ variables:
   DOCKER_HUB: "true"
   # Override CI_PROJECT_PATH for using correct DOCKERHUB path
   CI_PROJECT_PATH: "fabianbees/pihole-unbound"
-  BASE_VERSION: "2024.03.2"
-  VERSION: "2024.03.2"
+  BASE_VERSION: "2024.05.0"
+  VERSION: "2024.05.0"
 
 # Build Stages
 stages:
